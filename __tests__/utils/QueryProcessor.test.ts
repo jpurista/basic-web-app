@@ -19,7 +19,7 @@ describe("QueryProcessor", () => {
     });
 
     test('should return my AndrewID', () => {
-        const query = "andrew id";
+        const query = "andrew id" || "andrewid";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
             "jurista"
