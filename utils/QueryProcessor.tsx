@@ -49,15 +49,21 @@ export default function QueryProcessor(query: string): string {
 
 
   const cubeSquare = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)/);
+
   if (cubeSquare) {
     for (let index = 0; index < cubeSquare.length; index++) {
       let numL = Number(cubeSquare[index]);
+
       if (Math.sqrt(numL) % 2 == 0){
+
         if (Math.cbrt(numL) % 2 == 0){
           return cubeSquare[index]
         }
+
       }
+
     }
+    return "None are cube and square";
   }
 
   const primeNum = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)/);
@@ -69,6 +75,7 @@ export default function QueryProcessor(query: string): string {
         }
       }
     }
+    return "None are prime";
   }
 
   return "";
