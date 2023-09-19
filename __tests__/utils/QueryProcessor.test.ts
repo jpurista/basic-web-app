@@ -25,4 +25,12 @@ describe("QueryProcessor", () => {
             "jurista"
           ));
     });
+
+    test('should return my AndrewID', () => {
+        const query = "what is your name";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "Juan Pablo U"
+          ));
+    });
 });
