@@ -26,11 +26,19 @@ describe("QueryProcessor", () => {
           ));
     });
 
-    test('should return my AndrewID', () => {
+    test('should return my name', () => {
         const query = "what is your name";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
             "Juan Pablo U"
+          ));
+    });
+
+    test('should return largest number', () => {
+        const query = "Which of the following numbers is the largest: 34, 63, 49?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "63"
           ));
     });
 });
