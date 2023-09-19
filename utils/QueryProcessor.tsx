@@ -68,10 +68,11 @@ export default function QueryProcessor(query: string): string {
 
   const primeNum = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)/);
   if (primeNum) {
+    let primeNumList: string[] = []
     for (var i = 0; i <= primeNum.length; i++) {
       for (var j = 2; j <= i; j++) {
         if (i % j === 0 && j !== i) {
-          return primeNum[j];
+          primeNumList.push(primeNum[j]);
         }
       }
     }
