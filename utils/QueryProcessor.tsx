@@ -32,12 +32,19 @@ export default function QueryProcessor(query: string): string {
     return (x+y).toString();
   }
 
-  const largeMatch = query.match(/Which of the following numbers is the largest: (\d) , (\d), (\d)/);
+  const largeMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)/);
   if (largeMatch) {
     const x: number = parseInt(largeMatch[1]);
     const y: number = parseInt(largeMatch[2]);
     const z: number = parseInt(largeMatch[3]);
     return (Math.max(x,y,z)).toString();
+  }
+
+  const multiply = query.match(/What is (\d+) multiplied by (\d+)/);
+  if (multiply) {
+    const x: number = parseInt(multiply[1]);
+    const y: number = parseInt(multiply[2]);
+    return (x*y).toString();
   }
 
 
