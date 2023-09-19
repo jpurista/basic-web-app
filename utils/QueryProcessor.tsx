@@ -25,23 +25,20 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  if (query.toLowerCase().includes("34, 63, 49")) {
-    return (
-      "63"
-    );
+  const addMatch = query.match(/What is (\d+) plus (\d+)/);
+  if (addMatch) {
+    const x: number = parseInt(addMatch[1]);
+    const y: number = parseInt(addMatch[2]);
+    return (x+y).toString();
   }
 
-  if (query.toLowerCase().includes("48, 30, 52")) {
-    return (
-      "52"
-    );
-  }
+  // const largeMatch = query.match(/What is (\d+) plus (\d+)/);
+  // if (addMatch) {
+  //   const x: number = parseInt(addMatch[1]);
+  //   const y: number = parseInt(addMatch[2]);
+  //   return (x+y).toString();
+  // }
 
-  if (query.toLowerCase().includes("85, 3, 44")) {
-    return (
-      "85"
-    );
-  }
 
   return "";
 }
