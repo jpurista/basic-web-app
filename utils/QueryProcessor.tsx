@@ -78,5 +78,23 @@ export default function QueryProcessor(query: string): string {
     return "None are prime";
   }
 
+  const minus = query.match(/What is (\d+) minus (\d+)/)
+
+  if (minus) {
+    const x: number = parseInt(minus[1]);
+    const y: number = parseInt(minus[2]);
+    return (x-y).toString();
+  }
+
+  const plusMore = query.match(/What is (\d+) plus (\d+) plus (\d+)/)
+
+  if (plusMore){
+    const x: number = parseInt(plusMore[1]);
+    const y: number = parseInt(plusMore[2]);
+    const z: number = parseInt(plusMore[3]);
+
+    return (x+y+z).toString();
+  }
+
   return "";
 }
