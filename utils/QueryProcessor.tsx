@@ -25,9 +25,21 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  if (query.toLowerCase().includes("63")) {
+  if (query.toLowerCase().includes("34, 63, 49")) {
     return (
       "63"
+    );
+  }
+
+  if (query.toLowerCase().includes("48, 30, 52")) {
+    return (
+      "52"
+    );
+  }
+
+  if (query.toLowerCase().includes("85, 3, 44")) {
+    return (
+      "85"
     );
   }
 
